@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MobileLiveYouTube.iml" filepath="$PROJECT_DIR$/.idea/MobileLiveYouTube.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MobileLiveYouTube.iml" filepath="$PROJECT_DIR$/.idea/MobileLiveYouTube.iml" group="MobileLiveYouTube" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MobileLiveYouTube/app" />
     </modules>
   </component>
 </project>

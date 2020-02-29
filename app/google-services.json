@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "531315160108",
+    "firebase_url": "https://mobileliveapp-fb20b.firebaseio.com",
+    "project_id": "mobileliveapp-fb20b",
+    "storage_bucket": "mobileliveapp-fb20b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531315160108:android:78c1f24f7fa0f2c638cd89",
+        "android_client_info": {
+          "package_name": "com.example.mobileliveyoutube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531315160108-eh8b3n3j6urprb6hq8rtrqimbeb8ku38.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobileliveyoutube",
+            "certificate_hash": "42ddda61b23ca5737a4800c0d465ea0fe79bce0b"
+          }
+        },
+        {
+          "client_id": "531315160108-ucbff444d8ciid9dl0edujkuejir3864.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDQORAzcqPJ3f1ZK-Db9n46IH158ZsHEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531315160108-ucbff444d8ciid9dl0edujkuejir3864.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
