@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <!-- ===========================================================================
+     Color Palette as defined in Material Components
+     Only override those that required to be customized
+ ============================================================================ -->
+    <color name="appColorOnPrimary">#000000</color>
+    <color name="appColorPrimary">#000000</color>
+    <color name="appColorOnPrimarySurface">?attr/colorOnPrimary</color>
+    <color name="appColorPrimarySurface">?attr/colorOnPrimary</color>
+    <color name="appColorPrimaryVariant">#FFC107</color>
+    <color name="appColorOnSecondary">@color/design_default_color_on_secondary</color>
+    <color name="appColorSecondary">#68B6E4</color>
+    <color name="appColorSecondaryVariant">#3C708F</color>
+    <color name="appColorAccent">#6F3CD3</color>
+    <color name="appColorError">#e61e26</color>
+    <color name="appColorOnError">@color/design_default_color_on_error</color>
+    <color name="appColorOnSurface">@color/design_default_color_on_surface</color>
+    <color name="appColorSurface">@color/design_default_color_surface</color>
 </resources>
