@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
-
+apply plugin: "androidx.navigation.safeargs" // Required for Safe-Args
 apply plugin: 'kotlin-android'
-
+apply plugin: "kotlin-kapt" // Required for Kotlin with DataBinding
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -21,15 +21,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    // Required for Kotlin with DataBinding
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    //-> https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk8
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     //firebase
     implementation 'com.google.firebase:firebase-core:16.0.3'
@@ -38,6 +46,12 @@ dependencies {
     //play service auth
     implementation 'com.google.android.gms:play-services-auth:16.0.0'
 
+    // =================================================================================
+    // DataBinding
+    //--> https://developer.android.com/jetpack/androidx/releases/databinding
+    // Required for Kotlin with DataBinding
+    kapt "com.android.databinding:compiler:3.2.0-alpha10"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 
     // =================================================================================
     // UI
@@ -46,5 +60,36 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.2.0'
     //-> https://developer.android.com/jetpack/androidx/releases/constraintlayout
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // =================================================================================
+    // External Libraries
+
+    // =================================================================================
+    // squareup - Retrofit2, Okhttp, Moshi, Picasso
+    //-> https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.6.2"
+    // **Use Moshi instead** Gson support https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
+    // **Use Moshi instead** implementation "com.squareup.retrofit2:converter-gson:2.6.0"
+    // Coroutines Deferred support https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-moshi
+    implementation "com.squareup.retrofit2:converter-moshi:2.6.2"
+    // Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    // OkHttp - Logging Interceptors
+    implementation "com.squareup.okhttp3:logging-interceptor:4.2.2"
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // =================================================================================
+    // Navigation
+    //-> https://developer.android.com/jetpack/androidx/releases/navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // =================================================================================
+    // Tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 apply plugin: 'com.google.gms.google-services'
