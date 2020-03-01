@@ -6,4 +6,5 @@
     <string name="signin_txt">Sign in to stream and browse playlists, albums and artists from Youtube Music</string>
     <string name="welcm_txt">Welcome %1$s</string>
     <string name="welcm_txt_default">Welcome User</string>
+    <string name="youtube_main_screen">Youtube Videos</string>
 </resources>

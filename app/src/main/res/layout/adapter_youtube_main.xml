@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable name="bindItem" type="com.example.mobileliveyoutube.modules.youtubemainscreen.YoutubeModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/constraint_dashboard"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/adapter_content_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:adjustViewBounds="false"
+            android:background="@drawable/ic_play_circle_24px"
+            android:scaleType="fitCenter"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adapter_content_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/adapter_content_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-condensed"
+            android:letterSpacing="-0.01"
+            android:lineSpacingExtra="3sp"
+            android:singleLine="false"
+            android:textColor="@color/appColorOnSecondary"
+            android:textSize="@dimen/text_size_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hello World" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
