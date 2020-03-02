@@ -34,7 +34,9 @@ class YoutubeAdapter(val listener: YoutubeMainController.View) :DataBindingAdapt
         }else{
             holder.itemView.adapter_content_icon.visibility = View.GONE
         }
-
+        holder.itemView.constraint_dashboard.setOnClickListener {
+            listener.onItemClicked(item)
+        }
     }
 
 }
