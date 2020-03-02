@@ -8,5 +8,16 @@
     <fragment
         android:id="@+id/youtubeMain"
         android:name="com.example.mobileliveyoutube.modules.youtubemainscreen.YoutubeMain"
-        android:label="@string/youtube_main_screen" />
+        android:label="@string/youtube_main_screen" >
+        <action
+            android:id="@+id/action_youtubeMain_to_youtubeDetail"
+            app:destination="@id/youtubeDetail" />
+    </fragment>
+    <dialog
+        android:name="com.example.mobileliveyoutube.youtubedetailscreen.YoutubeDetail"
+        android:id="@+id/youtubeDetail"
+        android:label=""
+        tools:layout="@layout/fragment_youtube_detail">
+        <argument android:name="article" app:argType="com.example.mobileliveyoutube.modules.youtubemainscreen.YoutubeSnippet"/>
+    </dialog>
 </navigation>

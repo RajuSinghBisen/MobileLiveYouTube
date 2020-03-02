@@ -32,7 +32,8 @@ class YoutubeMain : Fragment(), YoutubeMainController.View {
     }
     override fun onItemClicked(item: YoutubeSnippet) {
         if (findNavController().currentDestination?.id == R.id.youtubeMain) {
-
+            findNavController().navigate(
+                YoutubeMainDirections.actionYoutubeMainToYoutubeDetail(item))
         }
     }
 
