@@ -25,8 +25,4 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Light">
-        <item name="android:textColorPrimary">?colorOnSecondary</item>
-    </style>
-
 </resources>

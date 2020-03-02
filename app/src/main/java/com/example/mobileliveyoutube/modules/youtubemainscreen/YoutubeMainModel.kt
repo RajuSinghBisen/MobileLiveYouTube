@@ -7,17 +7,40 @@ import kotlinx.android.parcel.Parcelize
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class YoutubeModel(
-    val kind: String? = null,
-    val data: NewsChildrenData? = null
+    val pageInfo: YouTubePageInfo? = null,
+    val items : List<YoutubeSnippet>? = null
 ): Parcelable
 
 @JsonClass(generateAdapter = true)
 @Parcelize
-data class NewsChildrenData(
-    val approved_at_utc: String? = null,
-    val subreddit: String? = null,
-    val selftext: String? = null,
-    val author_fullname: String? = null,
+data class YoutubeSnippet(
+    val snippet: YoutubeChild?
+): Parcelable
+
+@JsonClass(generateAdapter = true)
+@Parcelize
+data class YoutubeChild(
     val title: String? = null,
-    val thumbnail: String? = null
+    val thumbnails: YouTubeThumbnailInfo? = null
+): Parcelable
+
+@JsonClass(generateAdapter = true)
+@Parcelize
+data class YouTubePageInfo(
+    val totalResults: Int? = null,
+    val resultsPerPage: Int? = null
+): Parcelable
+
+@JsonClass(generateAdapter = true)
+@Parcelize
+data class YouTubeThumbnailInfo(
+    val medium: YouTubeThumbnailMediumInfo? = null
+): Parcelable
+
+@JsonClass(generateAdapter = true)
+@Parcelize
+data class YouTubeThumbnailMediumInfo(
+    val url: String? = null,
+    val width: Int? = null,
+    val height: Int? = null
 ): Parcelable

@@ -14,7 +14,7 @@ import com.example.mobileliveyoutube.databinding.FragmentYoutubeMainBinder
 class YoutubeMain : Fragment(), YoutubeMainController.View {
     private lateinit var binder: FragmentYoutubeMainBinder
     private lateinit var controller: YoutubeMainController
-    private lateinit var contentAdapter: YoutubeMainAdapter
+    private lateinit var contentAdapter: YoutubeAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binder = DataBindingUtil.inflate(inflater, R.layout.fragment_youtube_main, container, false)
         binder.lifecycleOwner = this
@@ -23,20 +23,20 @@ class YoutubeMain : Fragment(), YoutubeMainController.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         controller = YoutubeMainController( this, binder)
-        contentAdapter = YoutubeMainAdapter(this)
+        contentAdapter = YoutubeAdapter(this)
         binder.youtubeRecyclerview.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
             adapter = contentAdapter
         }
     }
-    override fun onItemClicked(item: YoutubeModel) {
+    override fun onItemClicked(item: YoutubeSnippet) {
         if (findNavController().currentDestination?.id == R.id.youtubeMain) {
 
         }
     }
 
-    override fun onContentData(items: List<YoutubeModel>) {
+    override fun onContentData(items: List<YoutubeSnippet>) {
         contentAdapter.submitList(items)
         contentAdapter.notifyDataSetChanged()
         if (items.isNullOrEmpty()) {
