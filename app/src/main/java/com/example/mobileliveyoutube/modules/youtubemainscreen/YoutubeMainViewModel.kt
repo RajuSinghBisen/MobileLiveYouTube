@@ -20,6 +20,10 @@ class YoutubeMainViewModel : ViewModel() {
     val results: LiveData<MutableList<YoutubeSnippet>>
         get() = _results
 
+    private val _totalResults = MutableLiveData<YouTubePageInfo>()
+    val totalResults: LiveData<YouTubePageInfo>
+        get() = _totalResults
+
     private val _error = SingleLiveEvent<Throwable>()
     val error: LiveData<Throwable>
         get() = _error
@@ -29,6 +33,7 @@ class YoutubeMainViewModel : ViewModel() {
             _processing.postValue(true)
             _error.postValue(null)
             try {
+                val totalResult = YoutubeMainRepository.getYoutubeCompleteData().pageInfo
                 val result = YoutubeMainRepository.getYoutubeCompleteData().items
                 val filter = ArrayList<YoutubeSnippet>()
                 if (result != null) {
@@ -36,9 +41,11 @@ class YoutubeMainViewModel : ViewModel() {
                         filter.add(item)
                     }
                 }
+                _totalResults.postValue(totalResult)
                 _results.postValue(filter.toList() as MutableList<YoutubeSnippet>?)
             } catch (e: Throwable) {
                 _results.postValue(null)
+                _totalResults.postValue(null)
                 _error.postValue(e)
             } finally {
                 _processing.postValue(false)

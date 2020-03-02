@@ -10,6 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobileliveyoutube.R
 import com.example.mobileliveyoutube.databinding.FragmentYoutubeMainBinder
+import com.example.mobileliveyoutube.repositories.LocalPreferences
+import kotlinx.android.synthetic.main.fragment_youtube_main.*
 
 class YoutubeMain : Fragment(), YoutubeMainController.View {
     private lateinit var binder: FragmentYoutubeMainBinder
@@ -29,6 +31,7 @@ class YoutubeMain : Fragment(), YoutubeMainController.View {
             layoutManager = LinearLayoutManager(context)
             adapter = contentAdapter
         }
+        userName.text = LocalPreferences.getInstance().getDisplayNameStored()
     }
     override fun onItemClicked(item: YoutubeSnippet) {
         if (findNavController().currentDestination?.id == R.id.youtubeMain) {
@@ -46,5 +49,9 @@ class YoutubeMain : Fragment(), YoutubeMainController.View {
             binder.youtubeRecyclerview.visibility = View.GONE
             binder.youtubeRecyclerview.visibility = View.VISIBLE
         }
+    }
+
+    override fun onTotalContentData(items:YouTubePageInfo) {
+        video_count.text =String.format(resources.getString(R.string.total_vidoes), items.totalResults.toString())
     }
 }
