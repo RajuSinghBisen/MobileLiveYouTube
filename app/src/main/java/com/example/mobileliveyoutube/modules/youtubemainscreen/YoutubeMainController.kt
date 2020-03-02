@@ -8,8 +8,8 @@ import com.example.mobileliveyoutube.utils.viewModelFactory
 class YoutubeMainController(fragment: YoutubeMain, binder: FragmentYoutubeMainBinder) {
 
     interface  View :  ArticleItemClick {
-        override fun onItemClicked(item: YoutubeModel)
-        override fun onContentData(items: List<YoutubeModel>)
+        override fun onItemClicked(item: YoutubeSnippet)
+        override fun onContentData(items: List<YoutubeSnippet>)
     }
     private val view: View = fragment
     private val viewModel = ViewModelProvider(fragment, viewModelFactory { YoutubeMainViewModel() }).get(YoutubeMainViewModel::class.java)
@@ -22,7 +22,7 @@ class YoutubeMainController(fragment: YoutubeMain, binder: FragmentYoutubeMainBi
 }
 
 interface ArticleItemClick {
-    fun onItemClicked(item: YoutubeModel)
-    fun onContentData(items: List<YoutubeModel>)
+    fun onItemClicked(item: YoutubeSnippet)
+    fun onContentData(items: List<YoutubeSnippet>)
 }
 
